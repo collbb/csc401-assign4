@@ -6,6 +6,7 @@ CSC 401: PROGRAMMING LANGUAGES
 25 POINTS								due DEC 08, 2016
 
 1.	Write a Python file containing the following functions. Also turn in the output from testing the functions. All arguments to the functions may be hard-coded.
+
  a.	Function 1 takes a list of strings as a parameter and returns a list of strings consisting of all the unique strings in the parameter list. For example:
  fun1 ([good, cat, bad, cat])
  returns [good, bad]
