@@ -1,5 +1,7 @@
 # Assignment 4 for CSC401 Python
-
+import Rect
+import functools
+import datetime
 # Function One(list of strings)
 # Take a list of strings as a parameter and return all unique strings
 def function_one(string_list):
@@ -23,27 +25,59 @@ def function_one(string_list):
 # Function Two(integer)
 # Take an integer and return whether or not the number is Perfect
 # Perfect number = sum of divisors = number
-def function_two(perfect_number)
+def function_two(perfect_number):
+    #    factors_list = []
+    #    for i in range(1,perfect_number):
+    #        if (perfect_number % i) == 0:
+    #            factors_list.append(i)
+    sum_of = sum(factors(perfect_number))-perfect_number
+    if  sum_of == perfect_number and sum_of > 1:
+        return True
+    else:
+        return False
 
-    return perfect_number
 
 # Function Three(integer)
 # Take an integer and return Perfect numbers <= number
+def function_three(perfect_number_two):
+    list_of_pn = []
+    for i in range(1,perfect_number_two):
+        if function_two(i):
+            list_of_pn.append(i)
+
+    return list_of_pn
+
 
 # Function Four(list of mixed types)
 # Take list of mixed type and count number of integers
+def function_four(mixed_list):
+
+    return mixed_list
+
 
 # Function Five(list of anything)
 # Take list of anything and remove second item
+def function_five(list_of_anything):
+
+    return list_of_anything
+
 
 # ClassCircle
 # Write class called circle, with an instance variable, for the radius
 # and methods to calculate the area and circumference of the circle.
 
+# Factors function borrowed from: http://stackoverflow.com/questions/6800193/what-is-the-most-efficient-way-of-finding-all-the-factors-of-a-number-in-python
+# Quicker than my for loop method
+def factors(n):
+    return functools.reduce(list.__add__,
+                ([i, n//i] for i in range(1, int(n**0.5) + 1) if n % i == 0))
 
 def main():
     print(function_one(['good', 'cat', 'bad', 'cat']))
-
+    print(function_two(1))
+    print(function_three(6))
+    print(function_four([2,'A','B',3,5,6]))
+    print(function_five([2,'A','B',3,5,6]))
 
 if __name__ == "__main__":
     main()
