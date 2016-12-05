@@ -1,7 +1,7 @@
 # Assignment 4 for CSC401 Python
-import Rect
 import functools
-import datetime
+from Circle import Circle
+
 # Function One(list of strings)
 # Take a list of strings as a parameter and return all unique strings
 def function_one(string_list):
@@ -51,13 +51,20 @@ def function_three(perfect_number_two):
 # Function Four(list of mixed types)
 # Take list of mixed type and count number of integers
 def function_four(mixed_list):
+    count = 0
+    for i in range(len(mixed_list)):
+        if isinstance(mixed_list[i], int):
+            count += 1
+        elif isinstance(mixed_list[i],list):
+            count += function_four(mixed_list[i])
 
-    return mixed_list
-
+    return count
 
 # Function Five(list of anything)
 # Take list of anything and remove second item
-def function_five(list_of_anything):
+def function_five(list_of_anything = []):
+    if len(list_of_anything) > 1:
+        del list_of_anything[1]
 
     return list_of_anything
 
@@ -74,10 +81,20 @@ def factors(n):
 
 def main():
     print(function_one(['good', 'cat', 'bad', 'cat']))
-    print(function_two(1))
-    print(function_three(6))
-    print(function_four([2,'A','B',3,5,6]))
-    print(function_five([2,'A','B',3,5,6]))
+    print(function_two(496))
+    print(function_three(2048))
+    print(function_four([1, ['A', 2], 'B', 3, 'C', 4, ['D', 5]]))
+    print(function_five(['A', ['A', 'B'], 'C']))
+
+    my_circle = Circle()
+    my_circle.radius = 5
+
+    print(my_circle.area())
+    print(my_circle.circumference())
+
+
 
 if __name__ == "__main__":
     main()
+
+
