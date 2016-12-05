@@ -68,11 +68,6 @@ def function_five(list_of_anything = []):
 
     return list_of_anything
 
-
-# ClassCircle
-# Write class called circle, with an instance variable, for the radius
-# and methods to calculate the area and circumference of the circle.
-
 # Factors function borrowed from: http://stackoverflow.com/questions/6800193/what-is-the-most-efficient-way-of-finding-all-the-factors-of-a-number-in-python
 # Quicker than my for loop method
 def factors(n):
